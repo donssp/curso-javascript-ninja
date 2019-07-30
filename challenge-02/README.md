@@ -40,7 +40,7 @@ function calc(x,y,z){
 		return 'Preencha todos os valores corretamente!';
 	}
 	else{
-		return (x*y*z) + 2;
+		return (x*y*z) + 2; //teste pra mais um commit
 	}
 };
 
