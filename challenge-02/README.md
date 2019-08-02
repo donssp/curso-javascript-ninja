@@ -39,9 +39,7 @@ function calc(x,y,z){
 	if(x == undefined || y == undefined || z == undefined){
 		return 'Preencha todos os valores corretamente!';
 	}
-	else{
-		return (x*y*z) + 2; //teste pra mais um commit
-	}
+	return (x*y*z) + 2; //teste pra mais um commit
 };
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -66,23 +64,24 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function cond(a,b,c){
-	if(a==undefined && b==undefined && c==undefined){
-		return 'valores nao inseridos';
-	}
-	else if(a!=undefined && b==undefined && c==undefined){
+	if(a!==undefined && b===undefined && c===undefined){
 		return a;
-	}
-	else if(a!=undefined && b!=undefined && c==undefined){
-		return a,b;
-	}
-	else{
-		return (a+b) / c;	// outroooo
+	}else if(a!==undefined && b!==undefined && c===undefined){
+		return a + b;
+	}else if(a!==undefined && b!==undefined && c!==undefined){
+		return (a+b) / c;
+	}else if(a===undefined && b===undefined && c===undefined){
+		return false;
+	}else{
+		return null;
 	}
 }
 
+
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-cond(); //valores não inseridos
-cond(3);	// 3
-cond(2,3);	//
+cond(); // false
+cond(2); // 2
+cond(2,2);	// 4
 cond(5,5,5);	// 2
+cond(2,2,2);	// 2
 ```
