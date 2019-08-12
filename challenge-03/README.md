@@ -102,19 +102,19 @@ pessoa.nomeCompleto();	//'Olá! Meu nome é BobSnow!'
 Qual a idade da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.idade;	// 33
+pessoa.mostrarIdade();	// Olá, eu tenho 33 anos.
 
 /*
 Qual o peso da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.peso;	// 66
+pessoa.mostrarPeso();	// Eu peso 66Kg.
 
 /*
 Qual a altura da pessoa? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
-pessoa.altura;	// 1.67
+pessoa.altura;	// Minhas altura é 1.67m
 
 /*
 Faça a `pessoa` fazer 3 aniversários.
@@ -179,21 +179,21 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function(){
-	sexo='o';
-	idade='ano';
-	metros='metro';
-	retorno='Olá, eu sou ' + sexo + pessoa.nomeCompleto() + ', tenho' + pessoa.idade + idade +',' + pessoa.altura + 'meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + metros
+	var sexo = 'o';
+	var idadeAnos = 'anos'; 
+	var metrosCaminhados = 'metros';
 
-	if (pessoa.sexo === 'feminino'){
+	if ( pessoa.sexo === 'Feminino' ){
 		sexo = 'a';
 	}
-	if (pessoa.idade > 1) {
-		idade = 'anos';
+	if ( pessoa.idade === 1){
+		idadeAnos = 'ano';
 	}
-	if (pessoa.caminhouQuantosMetros > 1) {
-		metros = 'metros';
+	if ( pessoa.caminhouQuantosMetros === 1){
+		metrosCaminhados = 'metro';
 	}
-	return retorno;
+
+	return 'Olá, eu sou ' + sexo + ' ' + pessoa.nome + ' ' + pessoa.sobrenome + ', tenho ' + pessoa.idade + ' ' + idadeAnos + ', ' + pessoa.altura + ', meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhados + '!';
 }
 
 // Agora, apresente-se ;)
