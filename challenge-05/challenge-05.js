@@ -9,7 +9,7 @@ Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
 function rec_array(arr){
 	return arr;
-};
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
@@ -35,12 +35,12 @@ var difArray = [1, 'string', undefined, true, -0, NaN];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-index_arr(difArray, 0);	// 1
-index_arr(difArray, 1); // 'string'
-index_arr(difArray, 2); // undefined
-index_arr(difArray, 3); // true
-index_arr(difArray, 4); // -0
-index_arr(difArray, 5); // NaN
+console.log(index_arr(difArray, 0));	// 1
+console.log(index_arr(difArray, 1)); // 'string'
+console.log(index_arr(difArray, 2)); // undefined
+console.log(index_arr(difArray, 3)); // true
+console.log(index_arr(difArray, 4)); // -0
+console.log(index_arr(difArray, 5)); // NaN
  
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -69,25 +69,30 @@ function book(bookName){
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log(book());/*{
+		'book1':{qtdPagina:44, autor:'ze', editora:'indie'},
+		'book2':{qtdPagina:22, autor:'juca', editora:'zaza'},
+		'book3':{qtdPagina:3333, autor:'tiao', editora:'texas'}
+		  }*/
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+var bookName = 'book3';
+console.log( 'O livro' + bookName + ' tem ' + book(bookName).qtdPagina  + ' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log( 'O autor do livro ' + bookName + ' é ' + book(bookName).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log( 'O livro ' + bookName + ' foi publicado pela editora ' + book(bookName).editora + '.');
