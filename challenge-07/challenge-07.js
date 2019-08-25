@@ -56,9 +56,7 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 console.log( 'Números ímpares entre 10 e 20:' );
 num = 10;
 while(num <= 19){
-	if(!(num%2===0)){
-		console.log(num);
-	}
+	num%2!=0 ? console.log(num):'';
 	num++;
 }
 
