@@ -18,6 +18,9 @@ itens de tipos diferentes, mostrando o resultado no console.
 addItem(arr,[1,'i',[1,3,4,]]);
 console.log(arr);
 
+// #### TESTE NEW BRANCH #####
+
+
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
