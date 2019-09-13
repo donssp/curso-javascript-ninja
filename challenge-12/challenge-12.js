@@ -72,7 +72,7 @@
     /*
     Converta os livros novamente para objeto.
     */
-    console.log( '\nAgora os livros são objetos novamente:' );
+    console.log( '\nAgora os l  ivros são objetos novamente:' );
     books = JSON.parse(books);
 
     /*
