@@ -42,20 +42,22 @@ Substitua todas as letras (somente letras) de "D" maiúsculo até "h"
 minúsculo por "0" (número zero). Mostre o resultado no console:
 */
 console.log( '\nTrocando de "D" a "h" por "0":' );
-console.log(text.replace(/[D-Za-h]/g, '0'));
+console.log(text.replace(/[D-Za-h]/g, 0));
 
 /*
 Substitua todos os "A" (maiúsculos ou minúsculos) por "4".
 Mostre o resultado no console:
 */
 console.log( '\nTrocando "A" e "a" por "4":' );
-console.log(text.replace(/[Aa]/g, '4'));
+console.log(text.replace(/[Aa]/g, 4));
 
 /*
 Substitua a frase "O Centauro de Luvas", deixando-a em caixa alta, usando
 o método `toUpperCase()`. Mostre o resultado no console:
 */
-
+console.log(text.replace(/O Centauro de Luvas/g, function(frase){
+    return frase.toUpperCase();
+}));
 
 /*
 Agora iremos substituir as datas no formato "13 de junho de 1804" para
@@ -70,7 +72,27 @@ Use um console.log para cada mês, usando a frase:
 "O mês de [NOME DO MÊS] é representado pelo número [NÚMERO DO MÊS]."
 */
 console.log( '\nMeses representados por números:' );
-// ?
+function getMonthNumber(monthName){
+    var months = {
+        janeiro:'01',
+        fevereiro:'02',
+        'março':'03',
+        abril:'04',
+        maio:'05',
+        junho:'06',
+        julho:'07',
+        agosto:'08',
+        setembro:'09',
+        outubro:'10',
+        novembro:'11',
+        dezembro:'12'
+    };
+    return months[monthName];
+}
+
+console.log('O mês de março é representado pelo número ' + getMonthNumber('março') + '.');
+console.log('O mês de setembro é representado pelo número ' + getMonthNumber('setembro') + '.');
+console.log('O mês de dezembro é representado pelo número ' + getMonthNumber('dezembro') + '.');
 
 /*
 Agora, declare uma variável chamada `regexDate` que irá receber a expressão
