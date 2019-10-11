@@ -1,9 +1,10 @@
+(function(){
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
 */
-
+'use strict';
 /*
 Crie uma função chamada `cleanCPF`, que receba um CPF por parâmetro, e
 retorne esse CPF limpo (somente os números).
@@ -15,7 +16,16 @@ eles! Use um console.log para cada CPF.
 - "101.123-131x32"
 */
 console.log( 'Limpando CPFs:' );
-// ?
+function cleanCPF(cpf){
+    return cpf.replace(/[^0-9]/g,'');
+}
+
+var cpf='365.ffdsfdsgg286.ddddd758-     05';
+console.log(cleanCPF(cpf));
+console.log(cleanCPF("049-214 3421-1"));
+console.log(cleanCPF("210.458.522-05"));
+console.log(cleanCPF("735 500 794 - 22"));
+console.log(cleanCPF("101.123-131x32"));
 
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -23,7 +33,15 @@ Ex.: "999.999.999-99"
 Mostre o resultado no console.
 */
 console.log( '\nFormatando CPFs corretamente:' );
-// ?
+function formatCpf(cpf){
+    return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/,function(regex, arg1, arg2, arg3, arg4){
+        return arg1 + '.' + arg2 + '.' + arg3 + '-' + arg4
+    })
+}
+console.log(formatCpf(cleanCPF("049-214 3421-1")));
+console.log(formatCpf(cleanCPF("210.458.522-05")));
+console.log(formatCpf(cleanCPF("735 500 794 - 22")));
+console.log(formatCpf(cleanCPF("101.123-131x32")));
 
 /*
 Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
@@ -37,7 +55,7 @@ O resultado deve ser:
 ["junho", "julho"]
 */
 console.log( '\nMatch com as palavras "junho" ou "julho" para a frase "Os meses de janeiro, junho e julho começam com a letra j.":' );
-// ?
+console.log("Os meses de janeiro, junho e julho começam com a letra j.".match(/ju(n|l)ho/g));
 
 /*
 Crie uma expressão regular que faça o match com a abertura de uma tag
@@ -49,7 +67,7 @@ O resultado deve ser:
 ["<div>", "<section>", "<blockquote>"]
 */
 console.log( '\nMatch com a abertura de uma tag HTML:' );
-// ?
+console.log("<div><section><blockquote>Texto <img /></blockquote></section></div>".match(/<\w+\s?>/g));
 
 /*
 Crie uma expressão regular que faça o match com uma tag HTML vazia, casando
@@ -87,3 +105,4 @@ corretas, para depois aplicar no código ;)
 */
 console.log( '\nFazer replace dos textos das tags:' );
 // ?
+})();
