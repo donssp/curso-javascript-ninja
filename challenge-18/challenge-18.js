@@ -17,15 +17,14 @@ eles! Use um console.log para cada CPF.
 */
 console.log( 'Limpando CPFs:' );
 function cleanCPF(cpf){
-    return cpf.replace(/[^0-9]/g,'');
+    //return cpf.replace(/[^0-9]/g,'');
+    return cpf.replace(/\D/g,'');
 }
 
-var cpf='365.ffdsfdsgg286.ddddd758-     05';
-console.log(cleanCPF(cpf));
-console.log(cleanCPF("049-214 3421-1"));
-console.log(cleanCPF("210.458.522-05"));
-console.log(cleanCPF("735 500 794 - 22"));
-console.log(cleanCPF("101.123-131x32"));
+var cpfs = ["049-214 3421-1","210.458.522-05","735 500 794 - 22","101.123-131x32"];
+cpfs.forEach(function(cpf){
+    console.log(cleanCPF(cpf));
+});
 
 /*
 Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -79,7 +78,7 @@ O resultado deve ser:
 ["<li></li>", "<li></li>", "<span></span>"]
 */
 console.log( '\nMatch com tags HTML vazias (abertura e fechamento da tag):' );
-// ?
+console.log("<div><ul><li></li><li></li><li><span></span></li></ul></div>".match(/<(\w+)><\/(\w+)>/g));
 
 /*
 Vamos complicar um pouco agora :D
@@ -104,5 +103,11 @@ https://regex101.com/#javascript e verifique se as capturas estão
 corretas, para depois aplicar no código ;)
 */
 console.log( '\nFazer replace dos textos das tags:' );
-// ?
+console.log(
+    '<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
+    .replace(
+        /<\w+>([^<]+)<\/\w+>/g,
+        '$10 texto dentro da tag "$2" é "$3"$4\n'
+    )
+);
 })();
