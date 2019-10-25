@@ -85,7 +85,7 @@
             return alert('Preencha o nome de usuário!');
         if(!$inputEmail.value)
             return alert('Preencha o e-mail!');
-        if(!$message)
+        if(!$message.value)
             return alert('Preencha a mensagem');
         if(!isValidEmail($inputEmail))
             return alert('Entre com um e-mail válido!');
@@ -120,5 +120,9 @@
         - "rita-marica@titica.a.b"
         - "agua_@evida.br.com"
     */
-    // ?
+    
+    function isValidEmail(){
+        return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email);
+    }
+
 })(window,document);
